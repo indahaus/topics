@@ -1,0 +1,36 @@
+<search [present]="searchOn" [session]="session"></search>
+<div id="navbar">
+    <ul>
+        <li>
+            <a  class="show-search" 
+                [class.active]="searchOn" 
+                (click)="toggleSearch()">
+                Search
+            </a>
+        </li>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a>About</a></li>
+        <li *ngIf="!hideLogin"><a routerLink="/login">Login</a></li>
+        <li *ngIf="hideLogin && session"><a>Logged in as {{session.name}}</a></li>
+        <li *ngIf="hideLogin && session" (click)="logoutProceed()"><a>Logout</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="push"></div>
+    <router-outlet></router-outlet>
+    <div class="controls">
+        <button (click)="goBack()" class="back">
+            Back
+        </button>
+    </div>
+    <div class="push"></div>
+</div>
+<div id="footer">
+    <!-- TODO -->
+    <p>Join us </p>
+    <p>Terms and conditions</p>
+    <p>Privacy policy</p>
+    <p>About</p>
+    <p>Contact</p>
+    <p>2017.</p>
+</div>

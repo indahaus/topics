@@ -1,0 +1,9 @@
+<table>
+    <tr *ngFor="let topic of topics">
+        <td>{{topic.title}}</td>
+        <td>{{topic.author}}</td>
+        <td><a (click)="answer(topic._id, true)">Approve</a></td>
+        <td><a (click)="answer(topic._id, false)">Reject</a></td>
+        <td><a [routerLink]="['/topic', topic._id]">Visit</a></td>
+    </tr>
+</table>

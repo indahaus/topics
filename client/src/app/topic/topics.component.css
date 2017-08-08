@@ -1,0 +1,80 @@
+.topics {
+    width: 100%;
+    padding-top: 15px;
+    display: inline-block;
+}
+
+.topic-wrapper {
+    position: relative; 
+    width: 720px;
+    height: 120px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.topic-wrapper img {
+    width: 90px; 
+    height: 90px;
+    margin: 15px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.topic-wrapper .title {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    display: inline-block;
+    margin: 0; 
+    padding: 0; 
+    top: 10px; 
+    left: 130px;
+}
+
+.topic-wrapper .title a {
+    font-size: 23px;
+    text-decoration: none; 
+    color: #41c9a7;
+    font-weight: bold;
+}
+
+.topic-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.topic-wrapper h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    position: absolute;
+    display: inline-block;
+    margin: 0; 
+    padding: 0; 
+    top: 40px;
+    left: 130px;
+}
+
+.topic-wrapper p {
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    width: 70%;
+}
+
+.topic-status {
+    height: 120px;
+    width: 120px;
+    background-color: #171717;
+    border-radius: 5px;
+    text-align: center;
+    color: #eee;
+    float: left;
+    font-size: 14px;
+}
+
+.topic-status .count {
+    display: block;
+    font-size: 25px;
+    margin-top: 5px;
+    color: #ffc632;
+}

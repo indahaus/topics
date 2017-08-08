@@ -1,0 +1,30 @@
+<div class="topics">
+    <div *ngFor="let topic of topics">
+        <div class="topic-wrapper">
+            <img [src]="topic.imgUrl ? topic.imgUrl : 'assets/images/book-avatar.jpg'">
+
+            <div class="title">
+                <a [routerLink]="['/topic', topic._id]">{{topic.title}}</a>
+            </div>
+
+            <h4>Written by {{topic.author}}</h4>
+
+            <p>
+                {{topic.description}}
+            </p>
+        </div>
+        <div class="topic-status">
+            <a  [routerLink] ="['/topic', topic._id]"
+                class="count">
+                1 
+            </a>
+            People following 
+
+            <a  [routerLink]="['/topic', topic._id, 'discussion']"
+                class="count">
+                {{topic.repliesCount}} 
+            </a>
+            Replies on topic
+        </div>
+    </div>
+</div>

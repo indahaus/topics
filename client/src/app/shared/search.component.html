@@ -1,0 +1,31 @@
+<div *ngIf="present" class="search">
+    <input #searchBox placeholder="Search" (keyup)="search(searchBox.value)">
+    <div class="result">
+        <a 
+            [routerLink]="['/topic', item._id]" 
+            *ngFor="let item of found">
+            {{item.title}} in {{item.category}}
+        </a>
+    </div>
+    <div *ngIf="session">
+        <h2>My account</h2>
+        <ul>
+            <li routerLink="/topics/create">Submission</li>
+            <!-- START OF TODO -->
+            <li>Saves</li>
+            <li>Runs</li>
+            <li>People</li>
+            <li>Statistics</li>
+            <li>Settings</li>
+            <!-- END OF TODO -->
+        </ul>
+    </div>
+    <div *ngIf="session && session.priority <= 3">
+        <h2>Moderation</h2>
+        <ul>
+            <a routerLink="/topics/pending"><li>Pending</li></a>
+            <li routerLink="/topics/rejected">Rejects</li>
+            <li>Users</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+h2, p {
+    margin-left: 10px;
+}
+
+form {
+    width: 50%;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+form > button {
+    display: block;
+    margin: 15px 0px;
+}
+
+form > input, form > textarea {
+    width: 70%;
+}
+
+form > input[type="checkbox"] {
+    width: initial;
+}
+
+.dummy {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.dummy img {
+    object-fit: cover;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute; 
+    top: 5px;
+    left: 5px;
+}
+
+.dummy h2 {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.dummy h4 {
+    position: absolute;
+    top: 32px;
+    left: 120px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.dummy .desc {
+    position: absolute;
+    top: 120px;
+    left: 5px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.dummy .info {
+    position: absolute; 
+    top: 37px;
+    left: 120px;
+}
+
+.dummy .info p {
+    display: inline-block;
+    font-size: 13px;
+}
+
+.separator {
+    display: inline-block;
+    width: 100%;
+}

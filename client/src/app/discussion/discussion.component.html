@@ -1,0 +1,23 @@
+<h2>{{title}}</h2>
+
+<p>Replies: {{replyCount}}</p>
+
+<div *ngFor="let reply of replies" class="reply">
+    <div class="user">
+        <img src="assets/images/user.png">
+        {{reply.name}}
+    </div>
+    <div class="content">
+        <p class="date">
+        {{reply.datetime}}
+        </p>
+        {{reply.content}}
+    </div>
+</div>
+<button (click)="showMore()" class="show-more">
+    Show more
+</button>
+<form *ngIf="session | async" (ngSubmit)="postReply()">
+    <textarea #content [(ngModel)]="newReply.content" name="content" placeholder="Content"></textarea>
+    <button type="submit">Reply</button>
+</form>

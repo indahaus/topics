@@ -1,0 +1,36 @@
+<h2>Dashboard</h2>
+<p>
+    Welcome! To get started pick up one of recommended topics or use search to find what you like.
+</p>
+
+<table>
+    <tr>
+        <!-- TODO: This should be automated / generated -->
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'books'}">
+            Books
+        </a>
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'movies'}">
+            Movies
+        </a>
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'shows'}">
+            Shows
+        </a>
+    </tr>
+    <tr>
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'theatre'}">
+            Theatre
+        </a>
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'music'}">
+            Music
+        </a>
+        <a [routerLink]="['/topics']" 
+            [queryParams]="{category: 'science'}">
+            Science
+        </a>
+    </tr>
+</table>

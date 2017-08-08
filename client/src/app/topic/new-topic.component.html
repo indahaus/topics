@@ -1,0 +1,84 @@
+<div class="message" *ngIf="message.show">
+    Your request has been sent. The topic will be 
+    available to you after approval on the link 
+    http://www.corava.kokos/{{message._id}}.
+</div>
+<h2>Submit a topic</h2>
+<p>
+    Enter details about new topic. If you 
+    are not sure how to do it properly please read 
+    instructions. 
+</p>
+
+<div class="container">
+    <form [formGroup]="topicForm" #f="ngForm" (ngSubmit)="onSubmit(topicForm, f)">
+        <input 
+            formControlName="title"
+            placeholder="Title" required>
+
+        <input 
+            formControlName="author"
+            placeholder="Author" required>
+
+        <textarea 
+            formControlName="description"
+            placeholder="Topic description here"
+            required>
+        </textarea>
+
+        <h3>Optional fields</h3>
+        <input 
+            formControlName="imgUrl"
+            placeholder="Image URL">
+        <input 
+            type="checkbox"
+            (change)="optionalInput($event.target.name)"
+            *ngIf="!optional.year"
+            name="year"><em *ngIf="!optional.year">Year</em>
+        <input 
+            type="checkbox"
+            (change)="optionalInput($event.target.name)"
+            *ngIf="!optional.genre"
+            name="genre"><em *ngIf="!optional.genre">Genre</em>
+        <input 
+            formControlName="year"
+            *ngIf="optional.year"
+            name="year" type="text"
+            placeholder="Year">
+        <input 
+            formControlName="genre"
+            *ngIf="optional.genre"
+            name="genre" type="text"
+            placeholder="Genre">
+            
+        <button *ngIf="topicForm.valid" type="submit" >
+            Submit
+        </button>
+    </form>
+
+    <div class="dummy">
+        <h2 *ngIf="topicForm.value.title">
+            {{topicForm.value.title}}
+        </h2>
+        <h2 *ngIf="!topicForm.value.title">
+            Enter title of the topic
+        </h2> 
+        <h4 *ngIf="topicForm.value.author">
+            Written by {{topicForm.value.author}}
+        </h4>
+        <h4 *ngIf="!topicForm.value.author">
+            Written by ...
+        </h4>
+        <p *ngIf="topicForm.value.description" class="desc">
+            {{topicForm.value.description}}
+        </p>
+        <p *ngIf="!topicForm.value.description" class="desc">
+            Write something about topic... 
+        </p>
+        <img [src]="topicForm.value.imgUrl ? topicForm.value.imgUrl : defImgUrl">
+        <div class="info">
+            <p *ngIf="topicForm.value.year">{{topic.year}}</p>
+            <p *ngIf="topicForm.value.genre">{{topic.genre}}</p>
+        </div>
+    </div>
+</div>

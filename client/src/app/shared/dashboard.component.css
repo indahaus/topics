@@ -1,0 +1,25 @@
+h2, p {
+    margin-left: 10px;
+}
+
+table {
+    width: 940px;
+    margin: 10px;
+}
+
+/* Anchor will act like a cell */ 
+table a {
+    display: table-cell;
+    height: 75px;
+    background-color: #171717;
+    color: #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table a:hover {
+    background-color: #1b7f67;
+    color: #eee;
+}

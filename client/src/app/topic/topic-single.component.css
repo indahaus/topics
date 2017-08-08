@@ -1,0 +1,71 @@
+#update {
+    display: none;
+}
+
+.topic-container {
+    position: relative;
+    display: block;
+    min-height: 200px;
+    margin: 10px;
+}
+
+.topic-container img {
+    object-fit: cover;
+    position: absolute; 
+    border-radius: 100%;
+    top: 10px;
+    left: 10px;
+    height: 130px;
+    width: 130px;
+}
+
+.topic-container h2 {
+    position: absolute;
+    top: 15px;
+    left: 200px;
+    margin: 0; 
+}
+
+.topic-container h4 {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    margin: 0;
+}
+
+.topic-container p.desc {
+    position: absolute;
+    top: 140px;
+}
+
+.topic-container .info {
+    position: absolute;
+    top: 80px;
+    left: 200px;
+}
+
+.topic-container .info p {
+    margin: 0;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+button, a {
+    margin: 10px;
+    margin-right: 0;
+}
+
+form#update {
+    display: block;
+    text-align: center;
+}
+
+form#update input {
+    display: inline-block;
+}
+
+form#update textarea {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 80%;
+}

@@ -1,0 +1,48 @@
+<div *ngIf="topic && !topic.reviewed" class="message">
+    This topic is not approved yet. If you want, choose action to apply upon this topic.
+    <button>Approve topic</button><button>Reject</button>
+</div>
+
+<div *ngIf="topic && !topic.passed && topic.reviewed" class="message">
+    This topic is rejected by site moderators and will be deleted completely
+    on upcoming maintenance. <button>Approve topic, instead?</button>
+</div>
+
+<div *ngIf="topic">
+    <div class="topic-container">
+        <img [src]="topic.imgUrl ? topic.imgUrl : 'assets/images/book-avatar.jpg'">
+        <h2>{{topic.title}}</h2>
+        <h4>Written by {{topic.author}}</h4>
+        <p *ngIf="topic.description" class="desc">{{topic.description}}</p>
+        <div class="info">
+            <p *ngIf="topic.year">Publishing year: {{topic.year}}</p>
+            <p *ngIf="topic.genre">Genre: {{topic.genre}}</p>
+        </div>
+    </div>
+    <p>
+        <a [routerLink]="['/topic', topic._id, 'discussion']">
+            Visit Discussion Page
+        </a>
+    </p>
+    <button *ngIf="session|async" (click)="toggleUpdate()">
+        Toggle Update
+    </button>
+    <button *ngIf="session|async" (click)="remove()">
+        Delete
+    </button>
+
+    <!-- Break this in two modules (one for update and other for view) -->
+    <form 
+        (ngSubmit)="update()" id="update"
+        [style.display]="hideUpdate ? 'none' : 'block'">
+        <input placeholder="Author" [(ngModel)]="topic.author" name="author">
+        <input placeholder="Title" [(ngModel)]="topic.title" name="title">     
+        <input placeholder="Category" [(ngModel)]="topic.category" name="category">
+        <input placeholder="Year" [(ngModel)]="topic.year" name="year">
+        <input placeholder="Genre" [(ngModel)]="topic.genre" name="price">
+        <textarea [(ngModel)]="topic.description" name="desc"></textarea>
+        <input placeholder="Image URL" [(ngModel)]="topic.imgUrl" name="imgUrl">
+        <button type="submit">Apply</button>
+    </form>
+
+</div>

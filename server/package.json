@@ -1,0 +1,15 @@
+{
+  "name": "topics-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "jsonwebtoken": "^7.4.1",
+    "mongodb": "^2.2.29"
+  }
+}
